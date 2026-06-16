@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Doces - Meu Carrinho</title>
+    <link rel="stylesheet" href="stilo-carrinho.css">
+</head>
+<body>
+
+    <div class="botoes-topo">
+        <a href="index.html" class="btn-login">◀ Continuar Comprando</a>
+    </div>
+
+    <div class="carrinho-pagina" style="margin-top: 20px;">
+        <div class="carrinho-topo">
+            <h2>🛒 Seu Carrinho de Compras</h2>
+        </div>
+        
+        <div class="carrinho-corpo-duplo">
+            <div class="carrinho-produtos-lado">
+                <div id="itens-carrinho" class="itens-carrinho">
+                    <!-- Gerado via JS -->
+                </div>
+            </div>
+
+            <div class="carrinho-dados-lado">
+                <h3>Finalizar Pedido</h3>
+                
+                <form id="form-checkout" onsubmit="event.preventDefault();">
+                    <div class="campo-grupo">
+                        <label for="cliente-nome">Seu Nome:</label>
+                        <input type="text" id="cliente-nome" placeholder="Digite seu nome completo" required>
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="entrega-metodo">Como deseja receber?</label>
+                        <select id="entrega-metodo" required>
+                            <option value="Retirada">Retirar na Loja (Grátis)</option>
+                            <option value="Entrega">Receber em Casa (Delivery)</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-grupo" id="grupo-endereco" style="display: none;">
+                        <label for="cliente-endereco">Endereço de Entrega:</label>
+                        <input type="text" id="cliente-endereco" placeholder="Rua, Número, Bairro">
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="pagamento-metodo">Forma de Pagamento:</label>
+                        <select id="pagamento-metodo" required>
+                            <option value="Pix">Pix</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito</option>
+                            <option value="Cartão de Débito">Cartão de Débito</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                        </select>
+                    </div>
+                </form>
+
+                <div class="carrinho-rodape">
+                    <div class="total-container">
+                        <span>Total do Pedido:</span>
+                        <span id="preco-total-carrinho">R$ 0,00</span>
+                    </div>
+                    <button id="btn-finalizar-pedido" class="btn-finalizar">Finalizar Pedido e Encerrar Compra</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script-carrinho.js" defer></script>
+</body>
+</html>

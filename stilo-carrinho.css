@@ -1,0 +1,230 @@
+/* IMPORTAÇÃO DE FONTES ELEGANTES PARA CONFEITARIA */
+@import url('https://googleapis.com');
+
+/* 1. CONFIGURAÇÕES GERAIS E RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #FFF6EE; /* Tom creme idêntico ao fundo do selo da logo */
+    color: #6D3D2A; /* Texto marrom chocolate escuro da logo */
+    padding: 20px;
+    max-width: 1200px; /* Mantém o site centralizado e elegante em telas grandes */
+    margin: 0 auto;
+}
+
+/* 2. TOPO DO SITE (BOTÃO CONTINUAR COMPRANDO) */
+.botoes-topo {
+    display: flex;
+    justify-content: flex-start; /* Alinha o botão de voltar à esquerda */
+    margin-bottom: 20px;
+}
+
+.btn-login {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 2px solid #6D3D2A; /* Borda chocolate */
+    border-radius: 25px; /* Formato arredondado que remete ao selo */
+    color: #6D3D2A;
+    text-decoration: none; /* Remove o sublinhado padrão de links */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #6D3D2A;
+    color: #FFF6EE;
+}
+
+/* 3. CONTAINER PRINCIPAL DO CHECKOUT */
+.carrinho-pagina {
+    background-color: #FFFFFF; /* Fundo branco limpo para dar destaque */
+    width: 100%;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(109, 61, 42, 0.06);
+    border: 1px solid rgba(109, 61, 42, 0.1);
+    animation: suavizarEntrada 0.4s ease;
+}
+
+@keyframes suavizarEntrada {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.carrinho-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dashed rgba(109, 61, 42, 0.15);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.carrinho-topo h2 {
+    font-family: 'Playfair Display', serif;
+    color: #6D3D2A;
+    font-size: 1.6rem;
+}
+
+/* 4. LAYOUT EM DUAS COLUNAS (PC) / UMA COLUNA (CELULAR) */
+.carrinho-corpo-duplo {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 35px;
+}
+
+@media (max-width: 820px) {
+    .carrinho-corpo-duplo {
+        grid-template-columns: 1fr; /* Quebra para uma coluna no celular */
+    }
+}
+
+/* 5. LISTAGEM DOS PRODUTOS SELECIONADOS (LADO ESQUERDO) */
+.itens-carrinho {
+    margin-bottom: 20px;
+}
+
+.item-lista-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(109, 61, 42, 0.08);
+}
+
+.item-info h4 {
+    font-size: 1.05rem;
+    color: #6D3D2A;
+    margin-bottom: 4px;
+}
+
+.item-info span {
+    font-size: 0.95rem;
+    color: #E5A93C;
+    font-weight: 700;
+}
+
+/* Botões circulares de alterar quantidades (+ e -) */
+.controles-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-qtd {
+    background-color: #FFF6EE;
+    border: 1px solid #6D3D2A;
+    color: #6D3D2A;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-qtd:hover {
+    background-color: #6D3D2A;
+    color: #FFF6EE;
+}
+
+/* 6. FORMULÁRIO E DADOS DE ENTREGA (LADO DIREITO) */
+.carrinho-dados-lado {
+    background-color: #FFF6EE; /* Fundo bege interno para dar contraste */
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(109, 61, 42, 0.05);
+}
+
+.carrinho-dados-lado h3 {
+    font-family: 'Playfair Display', serif;
+    color: #6D3D2A;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.campo-grupo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6D3D2A;
+}
+
+.campo-grupo input, .campo-grupo select {
+    padding: 11px 14px;
+    border: 1px solid rgba(109, 61, 42, 0.2);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    color: #6D3D2A;
+    background-color: #FFFFFF;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-grupo input:focus, .campo-grupo select:focus {
+    border-color: #E5A93C; /* Borda brilha em dourado no foco */
+    box-shadow: 0 0 0 3px rgba(229, 169, 60, 0.15);
+}
+
+/* 7. VALOR TOTAL E CONCLUSÃO DO PEDIDO */
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #6D3D2A;
+    margin: 20px 0;
+    border-top: 1px dashed rgba(109, 61, 42, 0.2);
+    padding-top: 15px;
+}
+
+#preco-total-carrinho {
+    color: #E5A93C;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Botão de Finalização (Disparador do WhatsApp) */
+.btn-finalizar {
+    width: 100%;
+    background-color: #E5A93C; /* Dourado de destaque */
+    color: #FFF6EE;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(229, 169, 60, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-finalizar:hover {
+    background-color: #c98f2b; /* Dourado escuro no hover */
+    box-shadow: 0 6px 15px rgba(201, 143, 43, 0.3);
+}
+
+.btn-finalizar:active {
+    transform: scale(0.98); /* Efeito tátil de clique */
+}
