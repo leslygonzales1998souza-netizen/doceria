@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Doces - Login</title>
+    <link rel="stylesheet" href="estilo-login.css">
+</head>
+<body>
+
+    <div class="botoes-topo">
+        <a href="index.html" class="btn-login">◀ Voltar ao Cardápio</a>
+    </div>
+
+    <div class="carrinho-pagina" style="max-width: 450px; margin: 60px auto;">
+        <div class="carrinho-topo">
+            <h2 id="login-titulo">🔑 Entrar na Minha Conta</h2>
+        </div>
+
+        <form id="form-autenticacao" onsubmit="event.preventDefault();">
+            <div class="campo-grupo" id="grupo-nome-cadastro" style="display: none;">
+                <label for="usuario-nome">Nome Completo:</label>
+                <input type="text" id="usuario-nome" placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="campo-grupo">
+                <label for="usuario-email">E-mail:</label>
+                <input type="email" id="usuario-email" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="usuario-senha">Senha:</label>
+                <input type="password" id="usuario-senha" placeholder="No mínimo 6 caracteres" required>
+            </div>
+
+            <button type="submit" id="btn-acao-auth" class="btn-finalizar" style="margin-top: 15px;">Entrar</button>
+        </form>
+
+        <div id="area-usuario-logado" style="display: none; text-align: center; padding: 20px 0;">
+            <p id="texto-usuario-boasvindas" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color:#6D3D2A;"></p>
+            <button id="btn-logout" class="btn-fechar" style="border-color: #b23b3b; color: #b23b3b;">Sair da Conta</button>
+        </div>
+
+        <p id="alternar-auth-texto" style="font-size: 0.9rem; margin-top: 20px; color: #6D3D2A; text-align: center;">
+            Não tem uma conta? <a href="#" id="link-ir-para-cadastro" style="color: #E5A93C; font-weight: bold; text-decoration: none;">Cadastre-se aqui</a>
+        </p>
+    </div>
+
+    <script src="script-login.js" defer></script>
+</body>
+</html>

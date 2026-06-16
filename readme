@@ -1,0 +1,39 @@
+# 🧁 Dr. Doces
+
+Sistema simples de cardápio digital para uma confeitaria artesanal. O cliente pode se cadastrar, fazer login, adicionar doces ao carrinho com quantidades personalizadas e finalizar o pedido.
+
+---
+
+## 🚀 Como Funciona o Sistema
+
+1. **Vitrine (`index.html`)**: Mostra os 6 doces. O cliente escolhe a quantidade e clica em "Adicionar". O botão do topo mostra o total de itens no carrinho em tempo real.
+2. **Login (`login.html`)**: Tela para criar conta ou entrar. Quando o cliente faz login, o botão superior da página muda automaticamente para o nome dele (ex: `👤 João`).
+3. **Carrinho (`carrinho.html`)**: Mostra a lista dos doces escolhidos, permite remover itens e exige o login do usuário para finalizar a compra. Se escolher "Entrega", o campo de endereço aparece.
+
+---
+
+## 🧠 Destaques de Lógica (JavaScript)
+
+O código foi atualizado para usar o padrão moderno de programação (`const`, `if`, Arrow Functions) e utiliza **Funções Recursivas** em dois lugares fundamentais:
+
+* **Busca de Usuário no Login**: A função `buscarUsuarioRecursivo` percorre a lista de clientes cadastrados passo a passo até achar o e-mail correto.
+* **Cálculo do Total do Carrinho**: A função `calcularTotalRecursivo` soma os valores de cada doce chamando a si mesma até chegar ao fim da lista de compras.
+
+---
+
+## 💾 Onde os dados são salvos?
+
+Tudo é guardado de forma limpa na memória do próprio navegador através do `LocalStorage`:
+* `banco_usuarios`: Guarda as contas criadas.
+* `usuario_logado`: Guarda quem está conectado agora.
+* `carrinho_atual`: Guarda os doces para não sumirem ao atualizar a página.
+
+---
+
+## 📂 Arquivos do Projeto
+
+* `index.html` (Vitrine de Doces)
+* `login.html` (Entrar / Cadastrar)
+* `carrinho.html` (Fechamento do Pedido)
+* `scritp.js` (Lógica do Cardápio)
+* `estilo.css` (Visual das Páginas)

@@ -1,0 +1,212 @@
+/* IMPORTAÇÃO DE FONTES ELEGANTES PARA CONFEITARIA */
+@import url('https://googleapis.com');
+
+/* 1. CONFIGURAÇÕES GERAIS E RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #FFF6EE; /* Tom creme idêntico ao fundo do selo da logo */
+    color: #6D3D2A; /* Texto marrom chocolate escuro da logo */
+    padding: 20px;
+    max-width: 1200px; /* Mantém o site centralizado e elegante em telas grandes */
+    margin: 0 auto;
+}
+
+/* 2. TOPO DO SITE (BOTÕES DE NAVEGAÇÃO) */
+.botoes-topo {
+    display: flex;
+    justify-content: flex-end; /* Envia os botões para o canto superior direito */
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+/* Estilização para os links do topo que imitam botões */
+.btn-login, .btn-cart {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 2px solid #6D3D2A; /* Borda chocolate */
+    border-radius: 25px; /* Formato arredondado que remete ao selo */
+    cursor: pointer;
+    text-decoration: none; /* Remove o sublinhado padrão de links */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background-color: transparent;
+    color: #6D3D2A;
+}
+
+.btn-login:hover {
+    background-color: #f7ede4;
+    color: #8B5A46;
+    border-color: #8B5A46;
+}
+
+.btn-cart {
+    background-color: #6D3D2A; /* Marrom marcante para o carrinho */
+    color: #FFF6EE;
+}
+
+.btn-cart:hover {
+    background-color: #8B5A46; /* Tom chocolate mais claro no hover */
+    border-color: #8B5A46;
+}
+
+/* Títulos Principais e Slogan */
+h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #6D3D2A;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+body > p { /* Aplica apenas ao parágrafo do slogan no topo */
+    text-align: center;
+    font-style: italic;
+    color: #8B5A46; /* Marrom suave para o slogan */
+    font-size: 1.1rem;
+    margin: 10px auto 40px auto;
+    max-width: 600px;
+}
+
+.titulo-loja {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 35px;
+    border-bottom: 2px dashed #E5A93C; /* Linha dourada pontilhada charmosa */
+    padding-bottom: 15px;
+}
+
+/* 3. VITRINE DE DOCES (GRADE GRID RESPONSIVA) */
+.vitrine-doces {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grade automática de 1 a 3 colunas */
+    gap: 25px; /* Espaço entre os cards */
+    margin-bottom: 50px;
+}
+
+.card-doce {
+    background-color: #FFFFFF; /* Fundo limpo para destacar o doce */
+    border: 1px solid rgba(109, 61, 42, 0.12);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(109, 61, 42, 0.04);
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo verticalmente */
+    justify-content: space-between; /* Garante que o container de preço fique na base do card */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito Hover nos Cards */
+.card-doce:hover {
+    transform: translateY(-5px); /* Efeito flutuante leve */
+    border-color: #E5A93C; /* Borda brilha em dourado */
+    box-shadow: 0 8px 20px rgba(229, 169, 60, 0.15);
+}
+
+.card-doce img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Recorta a imagem sem achatar ou esticar */
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.card-doce h3 {
+    font-size: 1.2rem;
+    color: #6D3D2A;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Descrição do Doce nos cards */
+.card-doce .descricao-doce {
+    font-size: 0.88rem;
+    color: #8B5A46;
+    margin: 0 0 15px 0;
+    text-align: center;
+    font-style: normal; /* Desfaz o itálico global do slogan */
+    line-height: 1.4;
+    min-height: 40px; /* Alinha os cards mantendo a mesma altura nas descrições */
+}
+
+/* Container de Preço, Seletor e Botão */
+.preco-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(109, 61, 42, 0.08);
+    gap: 8px;
+}
+
+.preco-doce {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #E5A93C; /* Preço destacado em dourado quente */
+}
+
+/* 4. SELETOR DE QUANTIDADE (Qtd:) NO CARD */
+.seletor-quantidade-card {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6D3D2A;
+}
+
+.qtd-produto-vitrine {
+    width: 42px;
+    padding: 5px 3px;
+    border: 1px solid rgba(109, 61, 42, 0.25);
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    color: #6D3D2A;
+    outline: none;
+}
+
+.qtd-produto-vitrine:focus {
+    border-color: #E5A93C;
+}
+
+/* Botão Adicionar Individual */
+.btn-adicionar-card {
+    background-color: #6D3D2A; /* Botão principal em chocolate */
+    color: #FFF6EE;
+    border: none;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.btn-adicionar-card:hover {
+    background-color: #E5A93C; /* Vira dourado ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(229, 169, 60, 0.2);
+}
+
+.btn-adicionar-card:active {
+    transform: scale(0.95);
+}
